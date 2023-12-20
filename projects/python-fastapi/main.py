@@ -5,4 +5,4 @@ from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
-app.mount("/", StaticFiles(directory="/file-test"), name="static")
+app.mount("/", StaticFiles(directory="file-test"), name="static")
