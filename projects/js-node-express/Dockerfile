@@ -1,6 +1,6 @@
 FROM node:slim
 
-ENV NODE_ENV production
+ENV NODE_ENV development
 
 WORKDIR /express-docker
 
@@ -8,8 +8,6 @@ COPY . .
 
 RUN npm install
 
-RUN npm install pm2 -g
-
-CMD pm2 start process.yml && tail -f /dev/null
+CMD [ "node", "index.js" ]
 
 EXPOSE 8000
