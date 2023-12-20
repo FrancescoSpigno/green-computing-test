@@ -6,6 +6,6 @@ const app = new Elysia().get("/small", async () => {
     return Bun.file("file-test/medium.json")
 }).get("/large", async () => {
     return Bun.file("file-test/large.json")
-}).listen(3000);
+}).listen(8000);
 
 console.log("Listening on http://localhost:8000");
