@@ -13,11 +13,11 @@ fn hello(Path(name): Path<String>) -> String {
 async fn main() -> Result<(), std::io::Error> {
     let app = Route::new().nest(
         "/",
-        StaticFilesEndpoint::new("../../file-test")
+        StaticFilesEndpoint::new("file-test")
             .show_files_listing()
     );
-    println!("Listening on http://127.0.0.1:3000");
-    Server::new(TcpListener::bind("0.0.0.0:3000"))
+    println!("Listening on http://127.0.0.1:8000");
+    Server::new(TcpListener::bind("0.0.0.0:8000"))
         .run(app)
         .await
 }
